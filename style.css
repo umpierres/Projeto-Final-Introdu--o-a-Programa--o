@@ -75,3 +75,22 @@ footer {
     height: 5%;
 }
 
+.default-button {
+    padding: 0.7rem;
+    width: 100%;
+    border-radius: 5rem;
+    background-color: #90B7F4;
+    color: white;
+    border: none;
+    margin-bottom: 1.6rem;
+}
+
+.pergunta-conta{
+    color: #EBBC21;
+    text-align: center;
+}
+
+.pergunta-conta a {
+    color: #304FAC;
+}
+
