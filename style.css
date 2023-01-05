@@ -19,7 +19,6 @@ body {
 
 main {
     display: flex;
-    height: 89.8vh;
     width: 90vw;
     margin: 0 auto;
 }
@@ -133,4 +132,12 @@ footer {
 .titulo-recados {
     margin: 0.7rem 5rem;
     color: white;
+}
+
+.principal {
+    height: 95vh;
+}
+
+.recados {
+    height: 90vh;
 }
