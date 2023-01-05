@@ -19,10 +19,33 @@ body {
 
 main {
     display: flex;
-    height: 95%;
+    height: 95vh;
     width: 90vw;
     margin: 0 auto;
 }
+
+h1 {
+    font-size: 4rem;
+    color: #90B7F4;
+}
+
+input {
+    margin: 1rem 0;
+    width: 95%;
+    border-radius: 3rem;
+    border-style: none solid solid none;
+    color: #EBBC21;
+    border-color: #EBBC21;
+    padding: 0.5rem 1rem;
+    
+}
+
+footer {
+    background-color: #90B7F4;
+    height: 5%;
+    display: flex;
+}
+
 
 .image-background {
     display: flex;
@@ -40,24 +63,10 @@ main {
 .login-area{
     display: flex;
     align-items: center;
-    margin: 0 auto;
-}
+    justify-content: center;
+    width: 50%;
+    height: 100%;
 
-h1 {
-    font-size: 4rem;
-    color: #90B7F4;
-}
-
-
-input {
-    margin: 1rem 0;
-    width: 100%;
-    border-radius: 3rem;
-    border-style: none solid solid none;
-    color: #EBBC21;
-    border-color: #EBBC21;
-    padding: 0.5rem 1rem;
-    
 }
 
 input::placeholder {
@@ -70,14 +79,9 @@ input:focus {
     border-color: #90B7F4;
 }
 
-footer {
-    background-color: #90B7F4;
-    height: 5%;
-}
-
 .default-button {
     padding: 0.7rem;
-    width: 100%;
+    width: 80%;
     border-radius: 5rem;
     background-color: #90B7F4;
     color: white;
@@ -94,3 +98,18 @@ footer {
     color: #304FAC;
 }
 
+.contato {
+    display: flex;
+    align-items: center;
+    color: white;
+    margin-left: 5rem;
+}
+
+.icones{
+    width: 3rem;
+    margin: 0.7rem;
+}
+
+.centralizar {
+    text-align: center;
+}
