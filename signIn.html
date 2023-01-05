@@ -4,7 +4,7 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Login</title>
+        <title>Criar Conta</title>
         <link rel="stylesheet" href="style.css" />
         <link
             rel="shortcut icon"
@@ -26,9 +26,9 @@
                     alt="marcando tarefas em uma lista"
                 />
             </section>
-            <section class="login-area">
+            <section class="signup-area">
                 <div>
-                    <h1 class="centralizar titulo">GUARDE SEUS RECADOS</h1>
+                    <h2 class="centralizar">CRIAR CONTA</h2>
                     <form method="get">
                         <div>
                             <input
@@ -40,19 +40,28 @@
                         <div>
                             <input
                                 type="password"
-                                id="senha"
+                                class="senha"
                                 placeholder="Senha"
+                            />
+                        </div>
+                        <div>
+                            <input
+                                type="password"
+                                class="senha"
+                                placeholder="Repita a senha"
                             />
                         </div>
                         <div class="centralizar">
                             <button type="submit" class="default-button">
-                                Entrar
+                                Criar conta
                             </button>
                         </div>
                         <div>
                             <p class="pergunta-conta">
-                                Ainda não tem conta?
-                                <a href="./signIn.html">Criar uma conta</a>
+                                Já tem conta?
+                                <a href="./index.html"
+                                    >Voltar para pagina inicial</a
+                                >
                             </p>
                         </div>
                     </form>

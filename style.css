@@ -19,14 +19,14 @@ body {
 
 main {
     display: flex;
-    height: 95vh;
+    height: 89.8vh;
     width: 90vw;
     margin: 0 auto;
 }
 
 h1 {
     font-size: 4rem;
-    color: #90B7F4;
+    color: #90b7f4;
 }
 
 input {
@@ -34,18 +34,33 @@ input {
     width: 95%;
     border-radius: 3rem;
     border-style: none solid solid none;
-    color: #EBBC21;
-    border-color: #EBBC21;
+    color: #ebbc21;
+    border-color: #ebbc21;
     padding: 0.5rem 1rem;
-    
+}
+input::placeholder {
+    color: #90b7f4;
+}
+
+input:focus {
+    outline: none;
+    border-style: none solid solid none;
+    border-color: #90b7f4;
+}
+
+header {
+    background-color: #90b7f4;
+    height: 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 footer {
-    background-color: #90B7F4;
+    background-color: #90b7f4;
     height: 5%;
     display: flex;
 }
-
 
 .image-background {
     display: flex;
@@ -60,42 +75,38 @@ footer {
     height: 80vh;
 }
 
-.login-area{
+.login-area,
+.signup-area {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 50%;
     height: 100%;
-
 }
 
-input::placeholder {
-    color: #90B7F4;
-  }
-
-input:focus {
-    outline: none;
-    border-style: none solid solid none;
-    border-color: #90B7F4;
+.signup-area h2 {
+    font-size: 4rem;
+    color: #90b7f4;
+    padding: 0 12rem;
 }
 
 .default-button {
     padding: 0.7rem;
     width: 80%;
     border-radius: 5rem;
-    background-color: #90B7F4;
+    background-color: #90b7f4;
     color: white;
     border: none;
     margin-bottom: 1.6rem;
 }
 
-.pergunta-conta{
-    color: #EBBC21;
+.pergunta-conta {
+    color: #ebbc21;
     text-align: center;
 }
 
 .pergunta-conta a {
-    color: #304FAC;
+    color: #304fac;
 }
 
 .contato {
@@ -105,11 +116,21 @@ input:focus {
     margin-left: 5rem;
 }
 
-.icones{
+.icones {
     width: 3rem;
     margin: 0.7rem;
 }
 
 .centralizar {
     text-align: center;
+}
+
+.icone-sair {
+    width: 3rem;
+    margin: 0.7rem 4rem;
+}
+
+.titulo-recados {
+    margin: 0.7rem 4rem;
+    color: white;
 }
