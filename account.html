@@ -28,7 +28,38 @@
                     alt="Sair"
             /></a>
         </header>
-        <main class="recados"><h2>MEUS RECADOS</h2></main>
+        <main>
+            <section><h2 class="titulo-recado">MEUS RECADOS</h2></section>
+            <section class="margin-padrao">
+                <input type="text" placeholder="Titulo" class="input-recados" />
+                <input
+                    type="text"
+                    placeholder="Mensagem"
+                    class="input-recados"
+                />
+                <input
+                    type="submit"
+                    value="Salvar"
+                    class="botao-salvar-recados"
+                />
+            </section>
+            <section class="margin-padrao">
+                <table id="tabela">
+                    <tr>
+                        <th>#</th>
+                        <th>Descrição</th>
+                        <th>Detalhamento</th>
+                        <th>Ação</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Terminar projeto</td>
+                        <td>até 17/01</td>
+                        <td><button>Apagar</button></td>
+                    </tr>
+                </table>
+            </section>
+        </main>
         <footer>
             <h3 class="contato">Entre em contato:</h3>
             <a href="https://github.com/umpierres"
