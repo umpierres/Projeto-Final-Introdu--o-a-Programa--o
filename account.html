@@ -31,13 +31,20 @@
         <main>
             <section><h2 class="titulo-recado">MEUS RECADOS</h2></section>
             <section class="margin-padrao">
-                <input type="text" placeholder="Titulo" class="input-recados" />
                 <input
+                    type="text"
+                    placeholder="Titulo"
+                    id="titulo-recado"
+                    class="input-recados"
+                />
+                <input
+                    id="mensagem-recado"
                     type="text"
                     placeholder="Mensagem"
                     class="input-recados"
                 />
                 <input
+                    onclick="salvarRecado()"
                     type="submit"
                     value="Salvar"
                     class="botao-salvar-recados"
