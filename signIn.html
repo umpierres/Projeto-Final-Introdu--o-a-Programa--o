@@ -20,18 +20,19 @@
     </head>
     <body>
         <main>
-            <figure>
+            <figure class="esquerda">
                 <img
+                    class="imagemPrincipal"
                     src="/assets/image/imagem-3D-checlist.jpg"
                     alt="marcando tarefas em uma lista"
                 />
             </figure>
-            <section>
+            <section class="direita">
                 <div>
-                    <h2>CRIAR CONTA</h2>
-                    <form method="get">
+                    <h2 class="tituloPrincipal">CRIAR SUA NOVA CONTA</h2>
+                    <form method="get" class="formPrincipal">
+                        <label for="usuario">Usuario</label>
                         <div>
-                            <label for="usuario">Usuario</label>
                             <input
                                 required
                                 type="text"
@@ -40,8 +41,8 @@
                                 placeholder="Usuario"
                             />
                         </div>
+                        <label for="email">E-mail</label>
                         <div>
-                            <label for="email">E-mail</label>
                             <input
                                 required
                                 type="email"
@@ -50,9 +51,8 @@
                                 placeholder="E-mail"
                             />
                         </div>
-
+                        <label for="senha">Senha</label>
                         <div>
-                            <label for="senha">Senha</label>
                             <input
                                 required
                                 type="password"
@@ -61,8 +61,8 @@
                                 placeholder="Senha"
                             />
                         </div>
+                        <label for="repitaSenha">Senha</label>
                         <div>
-                            <label for="repitaSenha">Senha</label>
                             <input
                                 required
                                 type="password"
@@ -73,10 +73,14 @@
                         </div>
                         <div id="erroDeSenha"></div>
                         <div>
-                            <input type="submit" value="Criar Conta" />
+                            <input
+                                class="botaoFormPrincipal"
+                                type="submit"
+                                value="Criar Conta"
+                            />
                         </div>
                         <div>
-                            <p>
+                            <p class="paragrafoPergunta">
                                 Já tem conta?
                                 <a href="./index.html"
                                     >Voltar para pagina inicial</a
@@ -88,15 +92,24 @@
             </section>
         </main>
         <footer>
-            <h3>Entre em contato:</h3>
+            <h3 class="tituloSecundario">Entre em contato:</h3>
             <a href="https://github.com/umpierres"
-                ><img src="./assets/image/github.png" alt="icone github"
+                ><img
+                    class="icones"
+                    src="./assets/image/github.png"
+                    alt="icone github"
             /></a>
             <a href="https://www.linkedin.com/in/alexandra-umpierres-3a729121b/"
-                ><img src="./assets/image/linkedin.png" alt="icone linkedin"
+                ><img
+                    class="icones"
+                    src="./assets/image/linkedin.png"
+                    alt="icone linkedin"
             /></a>
             <a href="https://www.instagram.com/1pierres/"
-                ><img src="./assets/image/instagram.png" alt="icone instagram"
+                ><img
+                    class="icones"
+                    src="./assets/image/instagram.png"
+                    alt="icone instagram"
             /></a>
         </footer>
         <script src="./script.js"></script>
