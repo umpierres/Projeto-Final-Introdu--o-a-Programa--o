@@ -20,24 +20,20 @@
     </head>
     <body>
         <header>
-            <h2 class="titulo-recados">Bem-vindo(a) aos seus recados</h2>
+            <h2>Bem-vindo(a) aos seus recados</h2>
             <a href="./index.html"
-                ><img
-                    class="icone-sair"
-                    src="./assets/image/logout.png"
-                    alt="Sair"
+                ><img src="./assets/image/logout.png" alt="Sair"
             /></a>
         </header>
         <main>
-            <section><h2 class="titulo-recado">MEUS RECADOS</h2></section>
-            <section class="margin-padrao">
+            <section><h2>MEUS RECADOS</h2></section>
+            <section>
                 <form onsubmit="salvarRecado(event)">
                     <label for="titulo-recado">Titulo do recado</label>
                     <input
                         type="text"
                         placeholder="Titulo"
                         id="titulo-recado"
-                        class="input-recados"
                         required
                     />
                     <label for="mensagem-recado">Mensagem do recado</label>
@@ -45,51 +41,43 @@
                         id="mensagem-recado"
                         type="text"
                         placeholder="Mensagem"
-                        class="input-recados"
                     />
-                    <input
-                        type="submit"
-                        value="Salvar"
-                        class="botao-salvar-recados"
-                    />
+                    <input type="submit" value="Salvar" />
                 </form>
             </section>
-            <section class="margin-padrao">
-                <table id="tabela">
-                    <tr>
-                        <th>#</th>
-                        <th>Descrição</th>
-                        <th>Detalhamento</th>
-                        <th>Ação</th>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>Terminar projeto</td>
-                        <td>até 17/01</td>
-                        <td><button>Apagar</button> <button>Editar</button></td>
-                    </tr>
+            <section>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Descrição</th>
+                            <th>Detalhamento</th>
+                            <th>Ação</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Terminar projeto</td>
+                            <td>até 17/01</td>
+                            <td>
+                                <button>Apagar</button> <button>Editar</button>
+                            </td>
+                        </tr>
+                    </tbody>
                 </table>
             </section>
         </main>
         <footer>
-            <h3 class="contato">Entre em contato:</h3>
+            <h3>Entre em contato:</h3>
             <a href="https://github.com/umpierres"
-                ><img
-                    class="icones"
-                    src="./assets/image/github.png"
-                    alt="icone github"
+                ><img src="./assets/image/github.png" alt="icone github"
             /></a>
             <a href="https://www.linkedin.com/in/alexandra-umpierres-3a729121b/"
-                ><img
-                    class="icones"
-                    src="./assets/image/linkedin.png"
-                    alt="icone linkedin"
+                ><img src="./assets/image/linkedin.png" alt="icone linkedin"
             /></a>
             <a href="https://www.instagram.com/1pierres/"
-                ><img
-                    class="icones"
-                    src="./assets/image/instagram.png"
-                    alt="icone instagram"
+                ><img src="./assets/image/instagram.png" alt="icone instagram"
             /></a>
         </footer>
         <script src="./script.js"></script>
