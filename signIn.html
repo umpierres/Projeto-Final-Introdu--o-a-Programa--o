@@ -30,7 +30,7 @@
             <section class="direita">
                 <div>
                     <h2 class="tituloPrincipal">CRIAR SUA NOVA CONTA</h2>
-                    <form method="get" class="formPrincipal">
+                    <form method="get" id="cadastro" class="formPrincipal">
                         <label for="usuario">Usuario</label>
                         <div>
                             <input
@@ -49,6 +49,16 @@
                                 id="email"
                                 name="email"
                                 placeholder="E-mail"
+                            />
+                        </div>
+                        <div>
+                            <label for="repitaEmail">Repita E-mail</label>
+                            <input
+                                required
+                                type="email"
+                                id="repitaEmail"
+                                name="repitaEmail"
+                                placeholder="Repita o E-mail"
                             />
                         </div>
                         <label for="senha">Senha</label>
@@ -71,7 +81,7 @@
                                 placeholder="Repita a senha"
                             />
                         </div>
-                        <div id="erroDeSenha"></div>
+                        <div id="erroDeDados"></div>
                         <div>
                             <input
                                 class="botaoFormPrincipal"
