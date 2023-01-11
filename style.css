@@ -72,6 +72,11 @@ tbody > tr:hover {
     margin: 5rem;
 }
 
+#erroDeDados,
+#usuarioNaoExiste {
+    margin-top: 2rem;
+}
+
 .formPrincipal input {
     width: 100%;
     border-radius: 3rem;
