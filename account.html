@@ -20,29 +20,34 @@
     </head>
     <body>
         <header>
-            <h2>Bem-vindo(a) aos seus recados</h2>
+            <h2 class="tituloSecundario">Bem-vindo(a) aos seus recados</h2>
             <a href="./index.html"
-                ><img src="./assets/image/logout.png" alt="Sair"
+                ><img id="iconeSair" src="./assets/image/logout.png" alt="Sair"
             /></a>
         </header>
-        <main>
-            <section><h2>MEUS RECADOS</h2></section>
+        <main id="mainRecados">
             <section>
-                <form>
-                    <label for="titulo-recado">Titulo do recado</label>
+                <h2 class="tituloPrincipalRecados">MEUS RECADOS</h2>
+            </section>
+            <section>
+                <form class="formRecados">
                     <input
                         type="text"
                         placeholder="Titulo"
                         id="titulo-recado"
                         required
                     />
-                    <label for="mensagem-recado">Mensagem do recado</label>
+
                     <input
                         id="mensagem-recado"
                         type="text"
                         placeholder="Mensagem"
                     />
-                    <input type="submit" value="Salvar" />
+                    <input
+                        class="botaoSalvarRecados"
+                        type="submit"
+                        value="Salvar"
+                    />
                 </form>
             </section>
             <section>
@@ -61,7 +66,8 @@
                             <td>Terminar projeto</td>
                             <td>até 17/01</td>
                             <td>
-                                <button>Apagar</button> <button>Editar</button>
+                                <button class="botaoTabela">Apagar</button>
+                                <button class="botaoTabela">Editar</button>
                             </td>
                         </tr>
                     </tbody>
@@ -69,15 +75,24 @@
             </section>
         </main>
         <footer>
-            <h3>Entre em contato:</h3>
+            <h3 class="tituloSecundario">Entre em contato:</h3>
             <a href="https://github.com/umpierres"
-                ><img src="./assets/image/github.png" alt="icone github"
+                ><img
+                    class="icones"
+                    src="./assets/image/github.png"
+                    alt="icone github"
             /></a>
             <a href="https://www.linkedin.com/in/alexandra-umpierres-3a729121b/"
-                ><img src="./assets/image/linkedin.png" alt="icone linkedin"
+                ><img
+                    class="icones"
+                    src="./assets/image/linkedin.png"
+                    alt="icone linkedin"
             /></a>
             <a href="https://www.instagram.com/1pierres/"
-                ><img src="./assets/image/instagram.png" alt="icone instagram"
+                ><img
+                    class="icones"
+                    src="./assets/image/instagram.png"
+                    alt="icone instagram"
             /></a>
         </footer>
         <script src="./script.js"></script>
