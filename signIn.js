@@ -1,5 +1,10 @@
 const listaCadastros = buscarDadosLocalStorage('cadastrosUsuarios');
-
+document.addEventListener('DOMContentLoaded', () => {
+    const usuarioLogado = localStorage.getItem('usarioLogado');
+    if (usuarioLogado) {
+        window.location.href = './account.html';
+    }
+});
 const formCriarConta = document.querySelector('#cadastro');
 formCriarConta.addEventListener('submit', (evento) => {
     evento.preventDefault();
@@ -20,14 +25,20 @@ formCriarConta.addEventListener('submit', (evento) => {
         return;
     }
     if (
-        listaCadastros.some(
-            (usuarioCadastrado) => usuarioCadastrado.email === email
-        )
+        listaCadastros.some((usuarioCadastrado) => {
+            if (
+                usuarioCadastrado.email === email ||
+                usuarioCadastrado.usuario === usuario
+            ) {
+                return true;
+            }
+        })
     ) {
         erroDeDadosHTML.innerHTML =
             '<p class="erroDeDados">Esse usuario já está cadastrado</p>';
         return;
     }
+    erroDeDadosHTML.innerHTML = '';
     setTimeout(() => {
         window.location.href = './index.html';
     }, 200);
@@ -41,7 +52,6 @@ formCriarConta.addEventListener('submit', (evento) => {
 
     listaCadastros.push(novoUsuario);
     guardarDadosLocalStorage('cadastrosUsuarios', listaCadastros);
-
     formCriarConta.reset();
 });
 
