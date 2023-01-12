@@ -209,3 +209,7 @@ input:focus {
 #mainRecados {
     display: block;
 }
+
+.erroDeDados {
+    color: red;
+}
