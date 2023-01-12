@@ -1,6 +1,6 @@
 const listaCadastros = buscarDadosLocalStorage('cadastrosUsuarios');
 document.addEventListener('DOMContentLoaded', () => {
-    const usuarioLogado = localStorage.getItem('usarioLogado');
+    const usuarioLogado = localStorage.getItem('usuarioLogado');
     if (usuarioLogado) {
         window.location.href = './account.html';
     }
