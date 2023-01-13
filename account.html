@@ -30,16 +30,16 @@
                 <h2 class="tituloPrincipalRecados">MEUS RECADOS</h2>
             </section>
             <section>
-                <form class="formRecados">
+                <form class="formRecados" id="formSalvarRecados">
                     <input
                         type="text"
                         placeholder="Titulo"
-                        id="titulo-recado"
+                        id="tituloRecado"
                         required
                     />
 
                     <input
-                        id="mensagem-recado"
+                        id="mensagemRecado"
                         type="text"
                         placeholder="Mensagem"
                     />
@@ -60,17 +60,7 @@
                             <th>Ação</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Terminar projeto</td>
-                            <td>até 17/01</td>
-                            <td>
-                                <button class="botaoTabela">Apagar</button>
-                                <button class="botaoTabela">Editar</button>
-                            </td>
-                        </tr>
-                    </tbody>
+                    <tbody id="tabelaBody"></tbody>
                 </table>
             </section>
         </main>
