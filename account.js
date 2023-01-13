@@ -29,16 +29,24 @@ function mostrarRegistrosHTML() {
     tbody.innerHTML = '';
     usuarioLogado.recados.forEach((valor, indice) => {
         tbody.innerHTML += `
-        <tr>
+        <tr id="${indice}">
                     <td>${indice + 1}</td>
                     <td>${valor.titulo}</td>
                     <td>${valor.mensagem}</td>
                     
                     <td><button class='botaoTabela' onclick='editarRecado()'>Editar</button>
-                    <button class='botaoTabela' onclick='apagarRecado()'>Apagar</button></td>
+                    <button class='botaoTabela' onclick='apagarRecado(${indice})'>Apagar</button></td>
                 </tr>
         `;
     });
+}
+
+function editarRecado() {}
+function apagarRecado(indice) {
+    const trRemove = document.getElementById(indice);
+    trRemove.remove();
+    usuarioLogado.recados.splice(indice, 1);
+    salvarUsuarios();
 }
 
 function sair() {
@@ -50,6 +58,13 @@ function salvarUsuarios() {
     const indice = listaCadastros.findIndex(
         (usuario) => usuario.email === usuarioLogado.email
     );
+
+    guardarDadosLocalStorage('usuarioLogado', {
+        usuario: usuarioLogado.usuario,
+        email: usuarioLogado.email,
+        senha: usuarioLogado.senha,
+        recados: usuarioLogado.recados,
+    });
     listaCadastros[indice].recados = usuarioLogado.recados;
     guardarDadosLocalStorage('cadastrosUsuarios', listaCadastros);
 }
