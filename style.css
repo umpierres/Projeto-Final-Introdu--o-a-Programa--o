@@ -72,6 +72,10 @@ tbody > tr:hover {
     margin: 5rem;
 }
 
+#iconeSair:hover {
+    cursor: pointer;
+}
+
 #erroDeDados,
 #usuarioNaoExiste {
     margin-top: 2rem;
