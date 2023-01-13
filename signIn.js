@@ -15,10 +15,6 @@ formCriarConta.addEventListener('submit', (evento) => {
     const reEmail = document.querySelector('#reEmail').value;
     const senha = document.querySelector('#senha').value;
     const reSenha = document.querySelector('#reSenha').value;
-    console.log(senha);
-    console.log(reSenha);
-    console.log(email);
-    console.log(reEmail);
     if (senha !== reSenha || email !== reEmail) {
         erroDeDadosHTML.innerHTML =
             '<p class="erroDeDados">Os dados não são iguais</p>';
@@ -36,6 +32,7 @@ formCriarConta.addEventListener('submit', (evento) => {
     ) {
         erroDeDadosHTML.innerHTML =
             '<p class="erroDeDados">Esse usuario já está cadastrado</p>';
+        formCriarConta.reset();
         return;
     }
     erroDeDadosHTML.innerHTML = '';
@@ -52,7 +49,6 @@ formCriarConta.addEventListener('submit', (evento) => {
 
     listaCadastros.push(novoUsuario);
     guardarDadosLocalStorage('cadastrosUsuarios', listaCadastros);
-    formCriarConta.reset();
 });
 
 function guardarDadosLocalStorage(chave, valor) {
