@@ -35,8 +35,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-localStorage.setItem('usuarioLogado', email);
-
 function guardarDadosLocalStorage(chave, valor) {
     localStorage.setItem(chave, JSON.stringify(valor));
 }
