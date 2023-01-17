@@ -1,4 +1,4 @@
-const usuarioLogado = buscarDadosLocalStorageObjeto('usuarioLogado');
+const usuarioLogado = buscarDadosLocalStorage('usuarioLogado');
 document.addEventListener('DOMContentLoaded', () => {
     if (!usuarioLogado.email) {
         window.location.href = './index.html';
@@ -100,13 +100,6 @@ function guardarDadosLocalStorage(chave, valor) {
 }
 
 function buscarDadosLocalStorage(chave) {
-    if (localStorage.getItem(chave)) {
-        return JSON.parse(localStorage.getItem(chave));
-    } else {
-        return [];
-    }
-}
-function buscarDadosLocalStorageObjeto(chave) {
     if (localStorage.getItem(chave)) {
         return JSON.parse(localStorage.getItem(chave));
     } else {
