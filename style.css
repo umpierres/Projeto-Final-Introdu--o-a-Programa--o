@@ -52,9 +52,9 @@ table {
 
 th,
 td {
-    padding: 8px;
+    padding: 0.8rem;
     text-align: center;
-    border-bottom: 1px solid #90b7f4;
+    border-bottom: 0.1rem solid #90b7f4;
 }
 
 th {
