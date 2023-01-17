@@ -82,6 +82,7 @@ function salvarRecado(indice) {
     guardarDadosLocalStorage('cadastrosUsuarios', listaCadastros);
     mostrarRegistrosHTML();
 }
+
 function apagarRecado(indice) {
     const trRemove = document.getElementById(indice);
     trRemove.remove();
