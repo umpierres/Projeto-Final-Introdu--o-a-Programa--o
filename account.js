@@ -6,24 +6,23 @@ document.addEventListener('DOMContentLoaded', () => {
         mostrarRegistrosHTML();
     }
 });
+
 const listaCadastros = buscarDadosLocalStorage('cadastrosUsuarios');
 const tbody = document.querySelector('#tabelaBody');
 const index = listaCadastros.findIndex(
     (usuario) => usuario.email === usuarioLogado.email
 );
-console.log(index);
+
 const formRecados = document.querySelector('#formSalvarRecados');
 
 formRecados.addEventListener('submit', (evento) => {
     evento.preventDefault();
     const tituloRecado = document.querySelector('#tituloRecado').value;
     const mensagemRecado = document.querySelector('#mensagemRecado').value;
-
     listaCadastros[index].recados.push({
         titulo: tituloRecado,
         mensagem: mensagemRecado,
     });
-    console.log(listaCadastros[index]);
 
     guardarDadosLocalStorage('cadastrosUsuarios', listaCadastros);
     mostrarRegistrosHTML();
@@ -40,20 +39,49 @@ function mostrarRegistrosHTML() {
                     <td>${valor.mensagem}</td>
                     
                     <td><button class='botaoTabela' onclick='editarRecado(${indice})'>Editar</button>
-                    <button class='botaoTabela' onclick='apagarRecado(${indice})'>Apagar</button></td>
+                    <button id='botaoEditar' class='botaoTabela' onclick='apagarRecado(${indice})'>Apagar</button></td>
                 </tr>
         `;
     });
 }
 
-/* function editarRecado(indice) {
-    const trRemove = document.getElementById(indice);
-    trRemove.remove();
-    listaCadastros[index].recados.splice(indice, 1);
+function editarRecado(indice) {
+    tbody.innerHTML += `
+        <tr id="${indice}">
+                    <td><h3 id='h3EditarRecados'>Editando o recado numero: ${
+                        indice + 1
+                    }</h3></td>
+                    <td><input
+                    id="tituloRecadoEditar"
+                    class='inputEditarRecados'
+                    type="text"
+                    placeholder="Titulo"
+                /></td>
+                    <td><input
+                    id="mensagemRecadoEditar"
+                    class='inputEditarRecados'
+                    type="text"
+                    placeholder="Mensagem"
+                /></td>
+                    <td><button class='botaoTabela' onclick='salvarRecado(${indice})'>Salvar</button>
+                </tr>
+        `;
+    document.querySelector('#tituloRecadoEditar').focus();
+}
+
+function salvarRecado(indice) {
+    const novoTitulo = document.querySelector('#tituloRecadoEditar').value;
+    const novaMensagem = document.querySelector('#mensagemRecadoEditar').value;
+    if (!novoTitulo) {
+        alert('Você precisa digitar um titulo para seu recado');
+        return;
+    }
+    listaCadastros[index].recados[indice].titulo = novoTitulo;
+    listaCadastros[index].recados[indice].mensagem = novaMensagem;
+
     guardarDadosLocalStorage('cadastrosUsuarios', listaCadastros);
     mostrarRegistrosHTML();
-} */
-
+}
 function apagarRecado(indice) {
     const trRemove = document.getElementById(indice);
     trRemove.remove();

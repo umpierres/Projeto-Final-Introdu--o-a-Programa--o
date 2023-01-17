@@ -217,3 +217,16 @@ input:focus {
 .erroDeDados {
     color: red;
 }
+
+.inputEditarRecados {
+    border-radius: 1rem;
+    border-style: none solid solid none;
+    border-color: #ebbc21;
+    padding: 1rem 2rem;
+    text-align: center;
+    color: #ebbc21;
+}
+
+#h3EditarRecados {
+    color: #ebbc21;
+}
