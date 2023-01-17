@@ -8,7 +8,10 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 const listaCadastros = buscarDadosLocalStorage('cadastrosUsuarios');
 const tbody = document.querySelector('#tabelaBody');
-
+const index = listaCadastros.findIndex(
+    (usuario) => usuario.email === usuarioLogado.email
+);
+console.log(index);
 const formRecados = document.querySelector('#formSalvarRecados');
 
 formRecados.addEventListener('submit', (evento) => {
@@ -16,57 +19,51 @@ formRecados.addEventListener('submit', (evento) => {
     const tituloRecado = document.querySelector('#tituloRecado').value;
     const mensagemRecado = document.querySelector('#mensagemRecado').value;
 
-    usuarioLogado.recados.push({
+    listaCadastros[index].recados.push({
         titulo: tituloRecado,
         mensagem: mensagemRecado,
     });
-    salvarUsuarios();
+    console.log(listaCadastros[index]);
+
+    guardarDadosLocalStorage('cadastrosUsuarios', listaCadastros);
     mostrarRegistrosHTML();
     formRecados.reset();
 });
 
 function mostrarRegistrosHTML() {
     tbody.innerHTML = '';
-    usuarioLogado.recados.forEach((valor, indice) => {
+    listaCadastros[index].recados.forEach((valor, indice) => {
         tbody.innerHTML += `
         <tr id="${indice}">
                     <td>${indice + 1}</td>
                     <td>${valor.titulo}</td>
                     <td>${valor.mensagem}</td>
                     
-                    <td><button class='botaoTabela' onclick='editarRecado()'>Editar</button>
+                    <td><button class='botaoTabela' onclick='editarRecado(${indice})'>Editar</button>
                     <button class='botaoTabela' onclick='apagarRecado(${indice})'>Apagar</button></td>
                 </tr>
         `;
     });
 }
 
-function editarRecado() {}
+/* function editarRecado(indice) {
+    const trRemove = document.getElementById(indice);
+    trRemove.remove();
+    listaCadastros[index].recados.splice(indice, 1);
+    guardarDadosLocalStorage('cadastrosUsuarios', listaCadastros);
+    mostrarRegistrosHTML();
+} */
+
 function apagarRecado(indice) {
     const trRemove = document.getElementById(indice);
     trRemove.remove();
-    usuarioLogado.recados.splice(indice, 1);
-    salvarUsuarios();
+    listaCadastros[index].recados.splice(indice, 1);
+    guardarDadosLocalStorage('cadastrosUsuarios', listaCadastros);
 }
 
 function sair() {
     localStorage.removeItem('usuarioLogado');
     window.location.href = './index.html';
-}
-
-function salvarUsuarios() {
-    const indice = listaCadastros.findIndex(
-        (usuario) => usuario.email === usuarioLogado.email
-    );
-
-    guardarDadosLocalStorage('usuarioLogado', {
-        usuario: usuarioLogado.usuario,
-        email: usuarioLogado.email,
-        senha: usuarioLogado.senha,
-        recados: usuarioLogado.recados,
-    });
-    listaCadastros[indice].recados = usuarioLogado.recados;
-    guardarDadosLocalStorage('cadastrosUsuarios', listaCadastros);
 }
 
 function guardarDadosLocalStorage(chave, valor) {
