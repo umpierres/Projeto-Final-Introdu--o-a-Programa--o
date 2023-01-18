@@ -46,41 +46,38 @@ function mostrarRegistrosHTML() {
 }
 
 function editarRecado(indice) {
-    tbody.innerHTML += `
-        <tr id="${indice}">
-                    <td><h3 id='h3EditarRecados'>Editando o recado numero: ${
-                        indice + 1
-                    }</h3></td>
-                    <td><input
-                    id="tituloRecadoEditar"
-                    class='inputEditarRecados'
-                    type="text"
-                    placeholder="Titulo"
-                /></td>
-                    <td><input
-                    id="mensagemRecadoEditar"
-                    class='inputEditarRecados'
-                    type="text"
-                    placeholder="Mensagem"
-                /></td>
-                    <td><button class='botaoTabela' onclick='salvarRecado(${indice})'>Salvar</button>
-                </tr>
-        `;
-    document.querySelector('#tituloRecadoEditar').focus();
-}
+    const sectionAtualizar = document.querySelector('#sectionAtualizar');
+    sectionAtualizar.innerHTML = `
+    <div id="divAtualizar">
+                    <form id="formAtualizar">
+                        <input
+                            type="text"
+                            name="novoTitulo"
+                            id="novoTitulo"
+                            placeholder="Atualizar Titulo"
+                            required
+                        />
+                        <input
+                            type="text"
+                            name="novaMensagem"
+                            id="novaMensagem"
+                            placeholder="Atualizar Mensagem"
+                        />
+                       <button type='submit' id='botaoSalvarEdicao' class='botaoTabela'>Salvar</button>;
+                    </form>
+                </div>`;
+    const formAtualizar = document.querySelector('#formAtualizar');
+    formAtualizar.addEventListener('submit', (evento) => {
+        evento.preventDefault();
+        const novoTitulo = document.querySelector('#novoTitulo').value;
+        const novaMensagem = document.querySelector('#novaMensagem').value;
+        listaCadastros[index].recados[indice].titulo = novoTitulo;
+        listaCadastros[index].recados[indice].mensagem = novaMensagem;
 
-function salvarRecado(indice) {
-    const novoTitulo = document.querySelector('#tituloRecadoEditar').value;
-    const novaMensagem = document.querySelector('#mensagemRecadoEditar').value;
-    if (!novoTitulo) {
-        alert('Você precisa digitar um titulo para seu recado');
-        return;
-    }
-    listaCadastros[index].recados[indice].titulo = novoTitulo;
-    listaCadastros[index].recados[indice].mensagem = novaMensagem;
-
-    guardarDadosLocalStorage('cadastrosUsuarios', listaCadastros);
-    mostrarRegistrosHTML();
+        guardarDadosLocalStorage('cadastrosUsuarios', listaCadastros);
+        mostrarRegistrosHTML();
+        sectionAtualizar.innerHTML = '';
+    });
 }
 
 function apagarRecado(indice) {
