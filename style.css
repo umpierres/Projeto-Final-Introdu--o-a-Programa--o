@@ -230,3 +230,75 @@ input:focus {
 #h3EditarRecados {
     color: #ebbc21;
 }
+
+#sectionAtualizar {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 60%;
+}
+
+.inputEditar {
+    border-radius: 1rem;
+    height: 4rem;
+    width: 30rem;
+    position: absolute;
+    right: calc(50% - 15rem);
+    border-style: none solid solid none;
+    border-color: #ebbc21;
+    text-align: center;
+}
+.inputEditar:hover {
+    border-radius: 1rem;
+    height: 4rem;
+    width: 30rem;
+    position: absolute;
+    right: calc(50% - 15rem);
+    border-style: none solid solid none;
+    border-color: #90b7f4;
+}
+
+#novoTitulo {
+    top: 30%;
+}
+#novaMensagem {
+    top: 50%;
+}
+#divAtualizar {
+    background-color: #0000009d;
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+}
+#formAtualizar {
+    background-color: aliceblue;
+    width: 40rem;
+    height: 40rem;
+    border-radius: 2rem;
+    position: absolute;
+    top: calc(50% - 20rem);
+    left: calc(50% - 20rem);
+}
+#botaoSalvarEdicao {
+    position: absolute;
+    width: 11rem;
+    height: 4.5rem;
+    padding: 0;
+    bottom: 4rem;
+    right: calc(50% - 5rem);
+    border-radius: 3rem;
+    border-style: none solid solid none;
+    color: white;
+    background-color: #90b7f4;
+    border-color: #ebbc21;
+    padding: 0.5rem 1rem;
+}
+#botaoSalvarEdicao:hover {
+    border-radius: 3rem;
+    border-style: none solid solid none;
+    color: white;
+    background-color: #ebbc21;
+    border-color: #90b7f4;
+    padding: 0.5rem 1rem;
+}
