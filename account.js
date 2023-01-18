@@ -65,7 +65,8 @@ function editarRecado(indice) {
                             id="novaMensagem"
                             placeholder="Atualizar Mensagem"
                         />
-                       <button type='submit' id='botaoSalvarEdicao' class='botaoTabela'>Salvar</button>;
+                       <button type='submit' id='botaoSalvarEdicao' class='botaoTabela'>Salvar</button>
+                       <button type='button' id='botaoCancelarEdicao' class='botaoTabela'>Cancelar</button>
                     </form>
         </div>`;
     const formAtualizar = document.querySelector('#formAtualizar');
@@ -78,6 +79,11 @@ function editarRecado(indice) {
 
         guardarDadosLocalStorage('cadastrosUsuarios', listaCadastros);
         mostrarRegistrosHTML();
+        sectionAtualizar.innerHTML = '';
+        sectionAtualizar.classList.remove('sectionAtualizarEditar');
+    });
+    const botaoCancelarEdicao = document.querySelector('#botaoCancelarEdicao');
+    botaoCancelarEdicao.addEventListener('click', (evento) => {
         sectionAtualizar.innerHTML = '';
         sectionAtualizar.classList.remove('sectionAtualizarEditar');
     });
