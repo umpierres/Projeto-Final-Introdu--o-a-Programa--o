@@ -23,7 +23,6 @@ formRecados.addEventListener('submit', (evento) => {
         titulo: tituloRecado,
         mensagem: mensagemRecado,
     });
-
     guardarDadosLocalStorage('cadastrosUsuarios', listaCadastros);
     mostrarRegistrosHTML();
     formRecados.reset();
