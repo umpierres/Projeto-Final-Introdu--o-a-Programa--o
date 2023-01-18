@@ -53,12 +53,14 @@ function editarRecado(indice) {
                         <input
                             type="text"
                             name="novoTitulo"
+                            class='inputEditar'
                             id="novoTitulo"
                             placeholder="Atualizar Titulo"
                             required
                         />
                         <input
                             type="text"
+                            class='inputEditar'
                             name="novaMensagem"
                             id="novaMensagem"
                             placeholder="Atualizar Mensagem"
