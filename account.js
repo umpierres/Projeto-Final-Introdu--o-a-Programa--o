@@ -47,6 +47,7 @@ function mostrarRegistrosHTML() {
 
 function editarRecado(indice) {
     const sectionAtualizar = document.querySelector('#sectionAtualizar');
+    sectionAtualizar.setAttribute('class', 'sectionAtualizarEditar');
     sectionAtualizar.innerHTML = `
     <div id="divAtualizar">
                     <form id="formAtualizar">
@@ -67,7 +68,7 @@ function editarRecado(indice) {
                         />
                        <button type='submit' id='botaoSalvarEdicao' class='botaoTabela'>Salvar</button>;
                     </form>
-                </div>`;
+        </div>`;
     const formAtualizar = document.querySelector('#formAtualizar');
     formAtualizar.addEventListener('submit', (evento) => {
         evento.preventDefault();
@@ -79,6 +80,7 @@ function editarRecado(indice) {
         guardarDadosLocalStorage('cadastrosUsuarios', listaCadastros);
         mostrarRegistrosHTML();
         sectionAtualizar.innerHTML = '';
+        sectionAtualizar.classList.remove('sectionAtualizarEditar');
     });
 }
 
@@ -87,6 +89,7 @@ function apagarRecado(indice) {
     trRemove.remove();
     listaCadastros[index].recados.splice(indice, 1);
     guardarDadosLocalStorage('cadastrosUsuarios', listaCadastros);
+    mostrarRegistrosHTML();
 }
 
 function sair() {

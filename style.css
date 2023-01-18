@@ -231,7 +231,7 @@ input:focus {
     color: #ebbc21;
 }
 
-#sectionAtualizar {
+.sectionAtualizarEditar {
     position: absolute;
     left: 0;
     top: 0;
