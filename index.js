@@ -17,12 +17,14 @@ formLogin.addEventListener('submit', (evento) => {
     if (!usuarioExiste) {
         erroDeDadosHTML.innerHTML =
             '<p class="erroDeDados">Credencias invalidas</p>';
+        setTimeout(() => {
+            erroDeDadosHTML.innerHTML = '';
+        }, 3000);
         return;
     } else {
         guardarDadosLocalStorage('usuarioLogado', usuarioExiste);
         window.location.href = './account.html';
     }
-    erroDeDadosHTML.innerHTML = '';
     setTimeout(() => {
         window.location.href = './index.html';
     }, 200);

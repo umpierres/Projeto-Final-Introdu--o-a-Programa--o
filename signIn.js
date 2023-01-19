@@ -18,6 +18,9 @@ formCriarConta.addEventListener('submit', (evento) => {
     if (senha !== reSenha || email !== reEmail) {
         erroDeDadosHTML.innerHTML =
             '<p class="erroDeDados">Os dados não são iguais</p>';
+        setTimeout(() => {
+            erroDeDadosHTML.innerHTML = '';
+        }, 3000);
         return;
     }
     if (
@@ -33,12 +36,11 @@ formCriarConta.addEventListener('submit', (evento) => {
         erroDeDadosHTML.innerHTML =
             '<p class="erroDeDados">Esse usuario já está cadastrado</p>';
         formCriarConta.reset();
+        setTimeout(() => {
+            erroDeDadosHTML.innerHTML = '';
+        }, 3000);
         return;
     }
-    erroDeDadosHTML.innerHTML = '';
-    setTimeout(() => {
-        window.location.href = './index.html';
-    }, 200);
 
     const novoUsuario = {
         usuario,
